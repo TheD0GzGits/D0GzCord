@@ -1,0 +1,216 @@
+@tailwind  base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-discord-darkest text-white min-h-screen font-sans;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #5865F2;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+  @apply bg-discord-darker rounded-lg shadow-lg overflow-hidden;
+}
+
+.server-icon {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-lg font-semibold transition-all;
+}
+
+.server-icon-active {
+  @apply rounded-[25%] bg-discord-blue;
+}
+
+.channel-item {
+  @apply flex items-center p-2 rounded hover:bg-discord-dark transition-colors text-discord-light cursor-pointer;
+}
+
+.channel-item.active {
+  @apply bg-discord-dark text-white;
+}
+
+.user-menu-item {
+  @apply flex items-center gap-2 p-3 text-sm hover:bg-discord-dark rounded-md transition-colors;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-discord-darker;
+}
+
+.btn-primary {
+  @apply bg-discord-blue hover:bg-opacity-80 text-white focus:ring-discord-blue;
+}
+
+.btn-success {
+  @apply bg-discord-green hover:bg-opacity-80 text-white focus:ring-discord-green;
+}
+
+.btn-danger {
+  @apply bg-discord-red hover:bg-opacity-80 text-white focus:ring-discord-red;
+}
+
+.btn-outline {
+  @apply border border-gray-600 bg-discord-darkest hover:bg-discord-dark text-white;
+}
+
+.input {
+  @apply w-full bg-discord-darkest text-white border border-gray-700 rounded-md px-3 py-2 
+    focus:outline-none focus:ring-2 focus:ring-discord-blue focus:border-transparent 
+    placeholder-gray-500;
+}
+
+.toggle {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors 
+    focus:outline-none focus:ring-2 focus:ring-discord-blue focus:ring-offset-2 focus:ring-offset-discord-darker;
+}
+
+.toggle-handle {
+  @apply inline-block h-4 w-4 transform rounded-full bg-white transition;
+}
+
+.tooltip {
+  @apply absolute invisible opacity-0 bg-black text-white text-xs rounded py-1 px-2 -mt-8 
+    transition-opacity group-hover:visible group-hover:opacity-100 whitespace-nowrap;
+}
+
+.progress-bar {
+  @apply bg-discord-darkest rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full rounded-full bg-discord-blue transition-all;
+}
+
+.widget-card {
+  @apply border border-gray-700 bg-discord-darker rounded-lg p-4 hover:border-discord-blue 
+    transition-colors cursor-pointer;
+}
+
+.widget-card.active {
+  @apply border-discord-blue;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Channel styles */
+.category-name {
+  @apply uppercase text-xs font-bold text-discord-light mb-1 mt-4 px-2;
+}
+
+.channel-icon {
+  @apply text-gray-400 mr-1;
+}
+
+/* Custom section styles for the UI Wizard */
+.section-card {
+  @apply border border-gray-700 bg-discord-dark rounded-lg overflow-hidden hover:border-discord-blue transition-colors;
+}
+
+.section-preview {
+  @apply h-32 overflow-hidden relative;
+}
+
+.section-overlay {
+  @apply absolute inset-0 bg-black bg-opacity-0 flex items-center justify-center opacity-0 
+    transition-opacity hover:bg-opacity-50 hover:opacity-100;
+}
+
+.color-item {
+  @apply w-6 h-6 rounded-full cursor-pointer transition-transform hover:scale-110;
+}
+
+.border-style {
+  @apply p-3 border border-gray-700 rounded-md text-center cursor-pointer transition-all hover:border-discord-blue;
+}
+
+.border-style.active {
+  @apply border-discord-blue;
+}
+
+/* Tooltip for server icons */
+.server-tooltip {
+  @apply absolute left-16 rounded py-1 px-2 bg-black text-white text-sm whitespace-nowrap z-10 
+    invisible opacity-0 transition-opacity group-hover:visible group-hover:opacity-100;
+}
+
+.border-t-discord-dark {
+  @apply border-t border-discord-dark;
+}
+
+.status-dot {
+  @apply w-3 h-3 rounded-full absolute bottom-0 right-0 border-2 border-discord-darkest;
+}
+
+.status-online {
+  @apply bg-discord-green;
+}
+
+.status-idle {
+  @apply bg-discord-yellow;
+}
+
+.status-dnd {
+  @apply bg-discord-red;
+}
+
+.status-offline {
+  @apply bg-gray-500;
+}
+
+/* Authentication pages */
+.auth-container {
+  @apply flex items-center justify-center min-h-screen bg-discord-darkest bg-opacity-90 bg-cover bg-center bg-no-repeat;
+  background-image: url('https://images.unsplash.com/photo-1614285653636-af3191aa94bd?ixid=M3w3MjUzNDh8MHwxfHNlYXJjaHwxfHxkYXJrJTIwZGlzY29yZCUyMFVJJTIwdGhlbWVzJTIwcHVycGxlJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NDcyOTc4MDh8MA&ixlib=rb-4.1.0&fit=fillmax&h=500&w=800');
+}
+
+.auth-card {
+  @apply w-full max-w-md p-8 space-y-8 rounded-lg shadow-2xl;
+  background-color: rgba(47, 49, 54, 0.95);
+}
+
+.auth-button {
+  @apply w-full py-3 px-4 bg-discord-blue hover:bg-discord-blue/80 text-white rounded-md transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-discord-blue/50 focus:ring-offset-2 focus:ring-offset-discord-darker;
+}
+
+.auth-input {
+  @apply w-full bg-discord-darkest text-white border border-gray-700 rounded-md px-4 py-3
+    focus:outline-none focus:ring-2 focus:ring-discord-blue focus:border-transparent 
+    placeholder-gray-500;
+}
+
+.auth-link {
+  @apply text-discord-blue hover:underline;
+}
+
+.premium-badge {
+  @apply bg-gradient-to-r from-discord-purple to-discord-blue text-white text-xs py-1 px-2 rounded-md;
+}
+ 
